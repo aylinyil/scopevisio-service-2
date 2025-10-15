@@ -9,9 +9,9 @@ reviews:
   auto_review:
     enabled: true
     drafts: false
-  chat:
-    auto_reply: false
-  knowledge_base:
-    learnings:
-      enabled: true
-      opt_out: false
+chat:
+   auto_reply: false
+knowledge_base:
+   opt_out: false
+   learnings:
+      scope: auto
