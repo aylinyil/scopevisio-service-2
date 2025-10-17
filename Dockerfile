@@ -12,7 +12,7 @@ RUN mvn dependency:go-offline
 COPY src ./src
 
 # Build the application
-RUN mvn clean install -DskipTests
+RUN mvn clean install
 
 
 # Use a slim JRE image to run the application
