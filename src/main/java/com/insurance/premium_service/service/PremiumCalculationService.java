@@ -113,7 +113,7 @@ public class PremiumCalculationService {
             throw new IllegalArgumentException("Invalid postcode or region: " + request.getPostcode());
         }
 
-        log.debug("Factors used → baseRate={}, yearlyMileageFactor={}, vehicleFactor={}, regionFactor={}",
+        log.info("Factors used → baseRate={}, yearlyMileageFactor={}, vehicleFactor={}, regionFactor={}",
                 baseRate, yearlyMileageFactor, vehicleFactor, regionFactor);
 
         // Calculate total premium based on factors
@@ -121,7 +121,7 @@ public class PremiumCalculationService {
         log.info("Premium calculation successful: total={}", total);
 
         PremiumResponse response = new PremiumResponse(total);
-        log.debug("Response object: " + response);
+        log.info("Response object: " + response);
 
         return response;
     }

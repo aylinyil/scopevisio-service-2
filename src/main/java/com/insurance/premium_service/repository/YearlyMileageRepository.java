@@ -34,11 +34,9 @@ public interface YearlyMileageRepository extends JpaRepository<YearlyMileage, Lo
      * 
      *     For example, if the database contains ranges like:
      * 
-     *       Range 1: 0 - 10,000 miles    
-     *       Range 2: 10,001 - 20,000 miles    
-     *       Range 3: 20,001 - Infinity    
-     *     
-     * 
+     *       Range 1: 0 - 10,000 km    
+     *       Range 2: 10,001 - 20,000 km    
+     *       Range 3: 20,001 - 100000000 km
      * 
      * @param yearlyMileage the yearly mileage value to find the range for
      * @return an Optional containing the YearlyMileage entity if a matching range is found,
