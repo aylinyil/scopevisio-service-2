@@ -65,7 +65,7 @@ class PremiumCalculationServiceTest {
         when(yearlyMileageRepository.findByYearlyMileageRange(any(BigDecimal.class)))
                 .thenReturn(Optional.empty());
 
-        PremiumRequest request = new PremiumRequest(999999, "SUV", "12345");
+        PremiumRequest request = new PremiumRequest(999999999, "SUV", "12345");
         IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,
                 () -> service.calculatePremium(request));
         assertTrue(ex.getMessage().contains("Invalid yearly mileage"));
@@ -112,9 +112,9 @@ class PremiumCalculationServiceTest {
         region.setRegion("NRW");
         com.insurance.premium_service.entity.PostCode pc = new com.insurance.premium_service.entity.PostCode();
         
-        when(postCodeRepository.findByPostcode(eq("50667"))).thenReturn(Optional.of(pc));
+        when(postCodeRepository.findByPostcode(eq("90667"))).thenReturn(Optional.of(pc));
 
-        String name = service.getRegionByPostcode("50667");
+        String name = service.getRegionByPostcode("90667");
         assertNull(name);
     }
 
